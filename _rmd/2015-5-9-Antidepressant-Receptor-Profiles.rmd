@@ -1,0 +1,68 @@
+---
+layout: post
+title: Antidepressant Receptor Profiles
+author: Abraham Nunes
+published: true
+status: done_process
+draft: false
+tags: Antidepressants Psychopharmacology Psychiatry R
+---
+
+The following polar plots describe the receptor binding properties of various antidepressants. These data were derived from the Clinical Handbook of Psychotropic Drugs 20th edition. Magnitude represents a log scale of the respective agent's *Ki*. Given that it is the relative binding (i.e. more vs. less) at a specific receptor that is most important for clinical knowledge, I have omitted quantitative descriptions at each pole of the plots.
+
+
+``` {r echo=FALSE, message=FALSE, comment="#", error=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+
+setwd("~/Dropbox/psychopharmacology_stats")
+
+data = read.csv("psychopharm_stats.csv", 
+                sep = ",", 
+                na.strings = c("", "NA"), 
+                head = TRUE)
+
+adrprofiles = read.csv("antidepressant_receptor_profiles.csv", 
+                       head = TRUE, 
+                       na.strings = c("", "NA"))
+
+aprprofiles = read.csv("antipsychotic_receptor_profiles.csv", 
+                       head = TRUE, 
+                       na.strings = c("", "NA"))
+
+aprprofileslog = read.csv("antipsychotic_receptor_profiles_log.csv", 
+                          head = TRUE, 
+                          na.strings = c("", "NA"))
+
+taprprofileslog = read.csv("antipsychotic_receptor_profile_transpose.csv", 
+                           head = TRUE, 
+                           na.strings = c("", "NA"))
+
+```
+
+``` {r echo=FALSE, message=FALSE, comment="#", error=FALSE, warning=FALSE}
+
+adrtrunc = adrprofiles[1:nrow(adrprofiles)-1,]
+
+for (i in 2:ncol(adrprofiles)) {
+
+  g = ggplot(adrtrunc, aes(x = X, y = adrtrunc[[i]])) + 
+      geom_bar(aes(fill = X), stat = "identity") + 
+      coord_polar() + 
+      ggtitle(gsub("\\b([a-z])([a-z]+)", "\\U\\1\\L\\2", names(adrtrunc)[i], perl = TRUE)) + 
+      guides(fill = FALSE) + 
+      theme(title = element_text(size = rel(2)),
+            axis.ticks = element_blank(),
+            axis.text.y = element_blank(), 
+            axis.title.y = element_blank(),
+            axis.title.x = element_blank(),
+            panel.background = element_blank(), 
+            axis.text.x = element_text(colour = "black")) + 
+      scale_fill_stata()
+  
+  #png(paste(names(adrtrunc)[i], ".png", sep = ""), height = 1000, width = 1000)
+  plot(g)
+  #dev.off()
+}
+```

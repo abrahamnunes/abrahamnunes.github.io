@@ -1,0 +1,117 @@
+---
+layout: post
+title: Antipsychotic Receptor Profiles
+author: Abraham Nunes
+published: true
+status: done_process
+draft: false
+tags: Antipsychotics Psychopharmacology Psychiatry R
+---
+
+The following polar plots describe the receptor binding properties of various antipsychotics. These data were derived from [Roth *et al.* Nature Reviews Drug Discovery 2004:3;353-359][Link1].
+
+``` {r echo=FALSE, message=FALSE, comment="#", error=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+
+setwd("~/Dropbox/psychopharmacology_stats")
+
+data = read.csv("psychopharm_stats.csv", 
+                sep = ",", 
+                na.strings = c("", "NA"), 
+                head = TRUE)
+
+adrprofiles = read.csv("antidepressant_receptor_profiles.csv", 
+                       head = TRUE, 
+                       na.strings = c("", "NA"))
+
+aprprofiles = read.csv("antipsychotic_receptor_profiles.csv", 
+                       head = TRUE, 
+                       na.strings = c("", "NA"))
+
+aprprofileslog = read.csv("antipsychotic_receptor_profiles_log.csv", 
+                          head = TRUE, 
+                          na.strings = c("", "NA"))
+
+taprprofileslog = read.csv("antipsychotic_receptor_profile_transpose.csv", 
+                           head = TRUE, 
+                           na.strings = c("", "NA"))
+
+```
+
+## Receptor Profiles by Medication
+
+The magnitude of each pole in the following plots represents a log scale of the estimated *Ki* for the ligand at each receptor type. *Ki* values were omitted because, well, when do you ever cite those when making clinical decisions? Poles are coloured by the neurotransmitter affected: serotonin (pink), noradrenaline (blue), dopamine (gold), histamine (green), acetylcholine (red-orange).
+
+``` {r echo=FALSE, message=FALSE, comment="#", error=FALSE, warning=FALSE}
+
+for (i in 3:ncol(aprprofileslog)) {
+
+  g = ggplot(aprprofileslog, aes(x = receptor, y = log(aprprofileslog[[i]] * 10000))) + 
+      geom_bar(aes(fill = neurotransmitter), stat = "identity") + 
+      coord_polar() + 
+      ggtitle(gsub("\\b([a-z])([a-z]+)", "\\U\\1\\L\\2", names(aprprofileslog)[i], perl = TRUE)) + 
+      guides(fill = FALSE) + 
+      theme_bw() + 
+      theme(title = element_text(size = rel(2)),
+            axis.ticks = element_blank(),
+            axis.text.y = element_blank(),
+            axis.text.x = element_text(size = rel(0.75)),
+            axis.title.y = element_blank(),
+            axis.title.x = element_blank(),
+            panel.border = element_blank(), 
+            axis.text.x = element_text(colour = "black"))
+  
+  #png(paste(names(aprprofileslog)[i], "_log.png", sep = ""), 
+  #    units = "in", 
+  #    res = 1200, 
+  #    height = 7, 
+  #    width = 7)
+  print(g)
+  #dev.off()
+
+}
+```
+
+
+## Receptor Profiles by Receptor
+
+The magnitudes of the poles in the following plots represent the absolute *Ki* as reported by [Roth et al.][Link1]. The values were not include in the diagrams for the reasons stated above. Poles are coloured individually for each medication.
+
+``` {r echo=FALSE, message=FALSE, comment="#", error=FALSE, warning=FALSE}
+
+taprprofileslog$medication = gsub("\\b([a-z])([a-z]+)", "\\U\\1\\L\\2", 
+                                  taprprofileslog$medication,
+                                  perl = TRUE)
+
+for (i in 2:ncol(taprprofileslog)) {
+
+  g = ggplot(taprprofileslog, aes(x = medication, y = taprprofileslog[[i]])) + 
+      geom_bar(aes(fill = medication), stat = "identity") + 
+      coord_polar() + 
+      ggtitle(gsub("\\b([a-z])([a-z]+)", "\\U\\1\\L\\2", gsub("X", "", names(taprprofileslog)[i]), perl = TRUE)) + 
+      guides(fill = FALSE) + 
+      theme_bw() + 
+      theme(title = element_text(size = rel(2)),
+            axis.ticks = element_blank(),
+            axis.text.y = element_blank(),
+            axis.text.x = element_text(size = rel(0.6)), 
+            axis.title.y = element_blank(),
+            axis.title.x = element_blank(),
+            panel.border = element_blank(), 
+            axis.text.x = element_text(colour = "black"))
+  
+  #png(paste(names(aprprofileslog)[i], "_log.png", sep = ""), 
+  #    units = "in", 
+  #    res = 1200, 
+  #    height = 7, 
+  #    width = 7)
+  plot(g)
+  #dev.off()
+
+}
+
+```
+
+[Link1]: http://www.nature.com/nrd/journal/v3/n4/full/nrd1346.html "Source"

@@ -5,7 +5,7 @@ author: Abraham Nunes
 published: true
 status: publish
 draft: false
-tags: computational_psychiatry
+tags: computational_psychiatry reinforcement_learning
 ---
 
 
