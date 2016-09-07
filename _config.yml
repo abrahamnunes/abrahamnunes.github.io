@@ -24,3 +24,6 @@ github_username:  abrahamnunes
 # Build settings
 markdown: kramdown
 theme: minima
+
+kramdown:
+    math_engine: mathjax
