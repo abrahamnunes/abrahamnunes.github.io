@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Abraham Nunes
 email: nunes@dal.ca
-description: A page with some notes.
+description: The mind is what the brain does.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://abrahamnunes.github.io"
 twitter_username: abrahamnunes
