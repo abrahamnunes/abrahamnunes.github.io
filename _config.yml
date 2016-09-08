@@ -20,6 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://abrahamnunes.github.io"
 twitter_username: abrahamnunes
 github_username:  abrahamnunes
+stackoverflow: "users/8895/abraham-nunes"
 
 # Build settings
 markdown: kramdown
@@ -27,3 +28,8 @@ theme: minima
 
 kramdown:
     math_engine: mathjax
+
+disqus:
+    shortname: abrahamnunes
+
+google_analytics: UA-38520845-1
