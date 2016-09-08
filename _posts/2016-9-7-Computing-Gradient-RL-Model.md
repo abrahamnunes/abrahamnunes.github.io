@@ -119,7 +119,7 @@ The log-likelihood function is perhaps the more interesting derivative to comput
 
 ### Observation Model
 
-The observation model consists of the process by which the agent selects actions. Classically---and herein---we implement the observation model as a softmax function characterizing the probability of action $a_t$ given the current state of the learning model, $\mathcal{Q}_t(s_t, a_t)$ and the model parameters $\boldsymbol\theta$: $P(a_t | \mathcal{Q}_t(s_t, a_t); \boldsymbol\theta)$.
+The observation model consists of the process by which the agent selects actions. Classically---and herein---we implement the observation model as a softmax function characterizing the probability of action $a_t$ given the current state of the learning model, $\mathcal{Q}_t(s_t, a_t)$ and the model parameters $\boldsymbol\theta$: $P(a_t | \mathcal{Q} _t(s_t, a_t); \boldsymbol\theta)$.
 
 $$
 P(a _t | \mathcal{Q} _t(s _t, a_t); \boldsymbol\theta) = \frac{e^{\beta \mathcal{Q} _t(s _t, a _t)}}{\sum _{a'} e^{\beta \mathcal{Q} _t(s _t, a')}}
