@@ -24,13 +24,13 @@ $$
 \mathcal{Q}(\mathcal{D}; \boldsymbol\Theta),
 $$
 
-\noindent which can be decomposed into the quality-weight component, $\omega(t)$, and survival probability component $S(t)$, both of which are functions of time, $0 < t < T$, where $T$ denotes the individual's time of death. In survival analysis, the survival function $S(t)$ is commonly defined as
+which can be decomposed into the quality-weight component, $\omega(t)$, and survival probability component $S(t)$, both of which are functions of time, $0 < t < T$, where $T$ denotes the individual's time of death. In survival analysis, the survival function $S(t)$ is commonly defined as
 
 $$
 S(t) = P(T > t),
 $$
 
-\noindent where $P(T>t)$ is the probability that an individual's time of death $T$ will occur after time $t$. This can be intuitively understood by considering that at an initial measurement time $t=0$, the individual's probability dying after that time is 100\%, but this probability decreases the further one looks ahead beyond $t = 0$.
+where $P(T>t)$ is the probability that an individual's time of death $T$ will occur after time $t$. This can be intuitively understood by considering that at an initial measurement time $t=0$, the individual's probability dying after that time is 100\%, but this probability decreases the further one looks ahead beyond $t = 0$.
 
 Since both quality of life at some future time $\omega(t)$ and survival probability at some future time $S(t)$ are both uncertain, if the clinician seeks to maximize quality-weighted longevity, he or she must estimate the _net-present quality-weighted longevity_, which we will denote by $\mathcal{Q}_0$, where the subscript 0 denotes that the estimate is made at time $t=0$:
 
