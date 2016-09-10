@@ -59,7 +59,7 @@ $$
 For the present example, the learning rule is encoded in the task code, which we will present below. Setting up a group of subjects is straightforward: just specify the number of subjects, initialize an $N_{subject} \times K_{parameter}$ array within the subject structure, and populate each column with parameters from the distributions of your choice. Here, we use a beta distribution for the learning rate and a gamma distribution for the inverse temperature.
 
 ``` matlab
-subjects.N           = 20;
+subjects.N           = 50;
 subjects.params      = zeros(subjects.N, 2);
 subjects.params(:,1) = betarnd(1.1, 1.1, [subjects.N, 1]); %learning rate
 subjects.params(:,2) = gamrnd(5., 1., [subjects.N, 1]); %inverse temperature
