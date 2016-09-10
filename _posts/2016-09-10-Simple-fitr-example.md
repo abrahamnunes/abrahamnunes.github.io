@@ -8,6 +8,15 @@
     keywords: fitr reinforcement_learning computational_psychiatry
 ---
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 ## Introduction
 
 Here I present a simple example of how to fit reinforcement learning models to behavioural data using our [`fitr` package](https://abrahamnunes.github.io/fitr) which is currently still under extensive development. The plots generated herein use code I have compiled into a toolbox called [`pqplot`](https://abrahamnunes.github.io/pqplot).
@@ -20,8 +29,8 @@ Unless you have already collected behavioural data from real subjects, we can si
 
 |           | Action 1                  | Action 2                  |
 | -------   | --------                  | --------                  |
-| State 1   | `1*Binomial(n=1, p=0.7)`  | `-1*Binomial(n=1, p=0.7)` |
-| State 2   | `-1*Binomial(n=1, p=0.7)` | `1*Binomial(n=1, p=0.7)`  |
+| __State 1__   | `1*Binomial(n=1, p=0.7)`  | `-1*Binomial(n=1, p=0.7)` |
+| __State 2__   | `-1*Binomial(n=1, p=0.7)` | `1*Binomial(n=1, p=0.7)`  |
 
 This can be thought of as a go-nogo task with two states. There will be 200 trials in the task, and the transition probability across trials (i.e. $P(s_1 \to s_2)$ or $P(s_2 \to s_1)$) is 0.5. These task parameters are specified as follows:
 
