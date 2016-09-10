@@ -5,7 +5,7 @@
     date: September 10, 2016
     published: true
     status: publish
-    keywords: fitr reinforcement_learning computational_psychiatry
+    keywords: fitr reinforcement_learning computational_psychiatry machine_learning
 ---
 
 <script type="text/x-mathjax-config">
