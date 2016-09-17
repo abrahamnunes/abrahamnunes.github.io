@@ -1,12 +1,12 @@
 ---
-	layout: post
-	title: Inflammation and Reward Sensitivity
-	author: Abraham Nunes
-	date: September 16, 2016
-	published: true
-	status: publish
-	draft: false
-	tags: computational_psychiatry paper_review reinforcement_learning neurobiology
+    layout: post
+    title: Inflammation and Reward Sensitivity
+    author: Abraham Nunes
+    date: September 16, 2016
+    published: true
+    status: publish
+    draft: false
+    tags: computational_psychiatry paper_review reinforcement_learning neurobiology
 ---
 
 <script type="text/x-mathjax-config">
