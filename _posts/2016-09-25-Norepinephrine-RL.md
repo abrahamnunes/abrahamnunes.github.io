@@ -8,6 +8,15 @@
     tags: computational_psychiatry computational_neuroscience computational_neuromodulation
 ---
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 The role of dopamine (DA) in reinforcement learning (RL) is extensively studied, but relatively less is understood about the effects of norepinephrine (NE). This post includes some notes (mainly point form) on the potential effects of NE signaling on computational models of RL as they pertain to rodent or primate behavioural data.
 
 # A Simple Model of Decision-Making
