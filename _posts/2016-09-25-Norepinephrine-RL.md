@@ -5,7 +5,7 @@
     date: September 25, 2016
     published: false
     status: draft
-    tags: compMuch is known about the roleMuch is known about the roleutational_psychiatry computational_neuroscience computational_neuromodulation
+    tags: computational_psychiatry computational_neuroscience computational_neuromodulation
 ---
 
 The role of dopamine (DA) in reinforcement learning (RL) is extensively studied, but relatively less is understood about the effects of norepinephrine (NE). This post includes some notes (mainly point form) on the potential effects of NE signaling on computational models of RL as they pertain to rodent or primate behavioural data.
@@ -80,6 +80,6 @@ Doya (2008) described three factors affecting decisions and learning:
 
 # References
 
-- Doya, K. (2008). Modulators of decision making. Nature Neuroscience, 11(4), 410–416. http://doi.org/10.1038/nn2077  
+- Doya, K. (2008). Modulators of decision making. Nature Neuroscience, 11(4), 410–416. http://doi.org/10.1038/nn2077
 - Hauser, T. U., Fiore, V. G., Moutoussis, M., & Dolan, R. J. (2016). Computational Psychiatry of ADHD: Neural Gain Impairments across Marrian Levels of Analysis. Trends in Neurosciences, xx, 1–11. http://doi.org/10.1016/j.tins.2015.12.009
 -
