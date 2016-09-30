@@ -106,7 +106,7 @@ $$
 
 This is one particular instance of a weight matrix you might choose. Typically, however, one would want to assign \textit{higher} weights to measurements with greater precision, i.e. $1/\sigma^2$.
 
-Just as in the OLS case, we take the derivative of the cost function $||\mathbf{W}\xi||^2$ and set it to zero to solve for $\boldsymbol\theta$.
+Just as in the OLS case, we take the derivative of the cost function $ ||\mathbf{W} \xi||^2 $ and set it to zero to solve for $ \boldsymbol\theta $.
 
 $$
 \begin{aligned}
