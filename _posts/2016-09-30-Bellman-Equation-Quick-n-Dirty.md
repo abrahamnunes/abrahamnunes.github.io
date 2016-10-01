@@ -24,12 +24,12 @@ A Markov decision process (MDP) has the following elements:
 - A set of states, $s_t \in \mathcal{S}$
 - A set of actions which depend on the current state, $a_t \in \mathcal{A}(s)$
 - A policy which maps from state to action, $\pi(s) \in \mathcal{A}(s)$
-- State transition probabilities, $ \mathcal{T}(s_{t+1} | s_t, a_t) $
-- A reward function $ \mathcal{R}(s_{t+1} | s_t, a_t)$. We can also denote the reward received at the current time step as $r_t$
+- State transition probabilities, $ \mathcal{T} (s_{t+1} | s_t, a_t) $
+- A reward function $ \mathcal{R} (s_{t+1} | s_t, a_t)$. We can also denote the reward received at the current time step as $r_t$
 
 The agent operating within such a process will generally accumulate value at each state according to behaviour under some policy. This value function is typically denoted as $V^{\pi}(s)$, but for state-action pairs is typically denoted as $\mathcal{Q}^{\pi}(s, a)$.
 
-The goal of the agent solving the MDP is to find the optimal policy such that total future value is maximized. The value functions under the optimal policy are typically denoted as either $V^{*}(s)$ or $\mathcal{Q}^{*}(s, a)$.
+The goal of the agent solving the MDP is to find the optimal policy such that total future value is maximized. The value functions under the optimal policy are typically denoted as either $V^{*} (s)$ or $\mathcal{Q}^{*} (s, a)$.
 
 Over time, the reward obtained will accumulate. At the $k^{th}$ time step, the reward is $\gamma^{k} V$, where $0 < \gamma < 1$ represents a discount factor. One can liken this to a measure of impulsivity or impatience, in behavioural terms.
 
