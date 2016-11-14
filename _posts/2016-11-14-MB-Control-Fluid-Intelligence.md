@@ -9,6 +9,15 @@
     tags: reinforcement_learning computational_psychiatry computational_neuroscience
 ---
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 I am quite interested in the natural history of behavioural control over the lifespan, and have been excited to see a couple of studies about this lately. The most recent paper I read on the topic is by Potter et al. (1) which just came up in my newsfeed. I've made some notes about it here.
 
 Potter et al. (1) sought to determine whether age-related changes in statistical learning, working memory, and fluid reasoning contributed to the positive association between age and model-based (MB) control, which had been shown by Decker et al. (2).
