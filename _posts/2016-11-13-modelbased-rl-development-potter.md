@@ -1,10 +1,11 @@
 ---
     layout: post
-    title: The development of model-based control: A summary of Potter et al. (2016)
+    title: The development of model-based control as it relates to fluid intelligence
     author: Abraham Nunes
     date: November 13, 2016
     published: true
     status: publish
+    draft: false
     tags: reinforcement_learning computational_psychiatry computational_neuroscience
 ---
 
